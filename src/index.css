@@ -8,9 +8,34 @@ body {
   overflow: hidden;
 }
 
+.layout {
+  position: relative;
+}
+
 .webgl {
   position: fixed;
   top: 0;
   left: 0;
   outline: none;
+}
+
+.button-screenshot {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.button-screenshot span {
+  margin-bottom: 10px;
 }

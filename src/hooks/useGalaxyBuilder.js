@@ -7,7 +7,7 @@ export const useGalaxyBuilder = () => {
 
   const galaxyBuilder = (parameters) => {
     // Init scene
-    const { textureLoader, scene, updateScene } = buildScene(parameters);
+    const { textureLoader, scene, updateScene, renderer } = buildScene(parameters);
 
     const particleTexture = textureLoader.load("/textures/particles/star.png");
 
@@ -117,7 +117,7 @@ export const useGalaxyBuilder = () => {
 
     updateGalaxy();
 
-    return { updateGalaxy, updateScene };
+    return { updateGalaxy, updateScene, renderer };
   };
 
   return { galaxyBuilder };

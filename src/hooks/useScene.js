@@ -52,6 +52,7 @@ export const useScene = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
+      preserveDrawingBuffer: true
     });
     renderer.setSize(sceneSizes.width, sceneSizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -75,7 +76,7 @@ export const useScene = () => {
       scene.background = new THREE.Color(parameters.sceneBackground);
     }
 
-    return { textureLoader, scene, updateScene };
+    return { textureLoader, scene, updateScene, renderer };
   };
 
   return { buildScene };

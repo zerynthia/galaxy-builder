@@ -1,10 +1,13 @@
 import { useEffect } from "react";
+
 import { useGalaxyBuilder } from "./hooks/useGalaxyBuilder";
 import { useDebug } from "./hooks/useDebug";
+import { useScreenshot } from "./hooks/useScreenshot";
 
 function App() {
   const { galaxyBuilder } = useGalaxyBuilder();
   const { debug } = useDebug();
+  const { initScreenshotButton } = useScreenshot();
 
   useEffect(() => {
     const parameters = {
@@ -29,13 +32,23 @@ function App() {
     };
 
     // Init galaxy
-    const { updateGalaxy, updateScene } = galaxyBuilder(parameters);
+    const { updateGalaxy, updateScene, renderer } = galaxyBuilder(parameters);
 
     // Debug
     debug(parameters, updateGalaxy, updateScene);
+
+    // Screenshot
+    initScreenshotButton(renderer);
   }, []);
 
-  return <canvas className="webgl"></canvas>;
+  return (
+    <main className="layout">
+      <canvas className="webgl"></canvas>
+      <button className="button-screenshot">
+        <span>📸</span>
+      </button>
+    </main>
+  );
 }
 
 export default App;
