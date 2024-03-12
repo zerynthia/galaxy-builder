@@ -29,6 +29,11 @@ function App() {
         width: 30,
         height: 30,
       },
+      rotation: {
+        x: 0,
+        y: 0,
+        z: 0,
+      },
     };
 
     // Init galaxy
@@ -44,9 +49,7 @@ function App() {
   return (
     <main className="layout">
       <canvas className="webgl"></canvas>
-      <button className="button-screenshot">
-        <span>📸</span>
-      </button>
+      <button className="button-screenshot">📸</button>
     </main>
   );
 }

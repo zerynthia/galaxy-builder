@@ -77,6 +77,27 @@ export const useDebug = () => {
       .addColor(parameters, "outsideColor")
       .name("Outside color")
       .onFinishChange(updateGalaxy);
+    galaxy
+      .add(parameters.rotation, "x")
+      .min(1)
+      .max(360)
+      .step(1)
+      .name("Rotation X")
+      .onFinishChange(updateGalaxy);
+    galaxy
+      .add(parameters.rotation, "y")
+      .min(1)
+      .max(360)
+      .step(1)
+      .name("Rotation Y")
+      .onFinishChange(updateGalaxy);
+    galaxy
+      .add(parameters.rotation, "z")
+      .min(1)
+      .max(360)
+      .step(1)
+      .name("Rotation Z")
+      .onFinishChange(updateGalaxy);
 
     // Black hole parameters
     blackHole

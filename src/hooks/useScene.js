@@ -52,7 +52,7 @@ export const useScene = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
-      preserveDrawingBuffer: true
+      preserveDrawingBuffer: true,
     });
     renderer.setSize(sceneSizes.width, sceneSizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));

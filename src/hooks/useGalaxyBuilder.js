@@ -7,7 +7,8 @@ export const useGalaxyBuilder = () => {
 
   const galaxyBuilder = (parameters) => {
     // Init scene
-    const { textureLoader, scene, updateScene, renderer } = buildScene(parameters);
+    const { textureLoader, scene, updateScene, renderer } =
+      buildScene(parameters);
 
     const particleTexture = textureLoader.load("/textures/particles/star.png");
 
@@ -112,6 +113,12 @@ export const useGalaxyBuilder = () => {
 
       // Points
       points = new THREE.Points(geometry, material);
+
+      // Rotation
+      points.rotation.x = parameters.rotation.x;
+      points.rotation.y = parameters.rotation.y;
+      points.rotation.z = parameters.rotation.z;
+
       scene.add(points);
     };
 
